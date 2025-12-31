@@ -1267,6 +1267,51 @@
             box-shadow: 0 15px 40px rgba(0, 168, 232, 0.6);
         }
         
+        /* Team Contact Info Styles */
+        .team-contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .contact-person {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            min-width: 280px;
+            border: 1px solid rgba(0, 168, 232, 0.2);
+            transition: var(--transition);
+        }
+        
+        .contact-person:hover {
+            transform: translateY(-10px);
+            border-color: rgba(0, 168, 232, 0.4);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+        
+        .contact-person h4 {
+            color: var(--accent-blue);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            border-bottom: 2px solid rgba(0, 168, 232, 0.3);
+            padding-bottom: 10px;
+        }
+        
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .contact-detail i {
+            color: var(--accent-orange);
+            width: 20px;
+        }
+        
         /* Responsive Design */
         @media (max-width: 1200px) {
             .hero h1 {
@@ -1311,6 +1356,10 @@
             
             .crab-illustration {
                 display: none;
+            }
+            
+            .team-contact-info {
+                gap: 30px;
             }
         }
         
@@ -1391,6 +1440,16 @@
                 bottom: 20px;
                 right: 20px;
             }
+            
+            .team-contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .contact-person {
+                width: 100%;
+                max-width: 350px;
+            }
         }
         
         @media (max-width: 576px) {
@@ -1432,6 +1491,10 @@
                 width: 45px;
                 height: 45px;
                 font-size: 1.2rem;
+            }
+            
+            .contact-person {
+                min-width: 100%;
             }
         }
     </style>
@@ -1761,6 +1824,41 @@
                 </div>
             </div>
             
+            <!-- 团队成员联系方式部分 -->
+            <div class="team-contact-info">
+                <div class="contact-person">
+                    <h4>杨宗昊 Jerry</h4>
+                    <div class="contact-detail">
+                        <i class="fas fa-phone"></i>
+                        <span>18382037966</span>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-envelope"></i>
+                        <span>3143064704@qq.com</span>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-user-tie"></i>
+                        <span>Chief Technology Officer</span>
+                    </div>
+                </div>
+                
+                <div class="contact-person">
+                    <h4>邵雨霁 Crystal</h4>
+                    <div class="contact-detail">
+                        <i class="fas fa-phone"></i>
+                        <span>13501849953</span>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-envelope"></i>
+                        <span>shaoji0402@163.com</span>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-user-tie"></i>
+                        <span>Chief Executive Officer</span>
+                    </div>
+                </div>
+            </div>
+            
             <div style="text-align: center; margin-top: 100px; opacity: 0; transform: translateY(30px);" class="animate-on-scroll">
                 <h3 style="color: var(--white); margin-bottom: 40px; font-size: 2.2rem;">Our Progress & Validation</h3>
                 <p style="max-width: 900px; margin: 0 auto 30px; color: rgba(255, 255, 255, 0.9); font-size: 1.2rem; line-height: 1.8;">We have successfully completed design, assembly, and debugging phases with a fully operational prototype validating all core functions: stable amphibious locomotion, basic obstacle avoidance, and payload integration. The real-time gait control system has been successfully tested on varied terrains, confirming adaptive capabilities.</p>
@@ -1779,10 +1877,13 @@
                 </div>
                 
                 <div class="footer-contact">
-                    <h3>Contact Us</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Innovation District, XXX City</p>
-                    <p><i class="fas fa-phone"></i> 1234578910</p>
-                    <p><i class="fas fa-envelope"></i> info@crabion-tech.com</p>
+                    <h3>Contact Our Team</h3>
+                    <p><strong>杨宗昊 (Jerry Yang)</strong></p>
+                    <p><i class="fas fa-phone"></i> 18382037966</p>
+                    <p><i class="fas fa-envelope"></i> 3143064704@qq.com</p>
+                    <p style="margin-top: 15px;"><strong>邵雨霁 (Crystal Shao)</strong></p>
+                    <p><i class="fas fa-phone"></i> 13501849953</p>
+                    <p><i class="fas fa-envelope"></i> shaoji0402@163.com</p>
                 </div>
                 
                 <div class="footer-links">
@@ -1946,7 +2047,7 @@
 
         // Scroll-triggered animation function
         function animateOnScroll() {
-            const elements = document.querySelectorAll('.card, .stat-card, .team-member, .animate-on-scroll');
+            const elements = document.querySelectorAll('.card, .stat-card, .team-member, .animate-on-scroll, .contact-person');
             
             elements.forEach(element => {
                 const elementTop = element.getBoundingClientRect().top;
